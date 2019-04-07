@@ -1,14 +1,15 @@
 --------------------------------------------------
--- BonusScanner v1.2
+-- BonusScanner v1.3
 -- by Crowley <crowley@headshot.de>
 -- performance improvements by Archarodim
+-- enhancements by theit8514
 --
 -- get the latest version here:
 -- http://ui.worldofwar.net/ui.php?id=1461
 -- http://www.curse-gaming.com/mod.php?addid=2384
 --------------------------------------------------
 
-BONUSSCANNER_VERSION = "v1.2";
+BONUSSCANNER_VERSION = "v1.3";
 
 
 BONUSSCANNER_PATTERN_SETNAME = "^(.*) %(%d/%d%)$";
