@@ -6,6 +6,7 @@ BONUSSCANNER_NAMES = {
 	INT 		= "Intellect",
 	SPI 		= "Spirit",
 	ARMOR 		= "Reinforced Armor",
+	DPS 		= "Damage/Sec",
 
 	ARCANERES 	= "Arcane Resistance",	
 	FIRERES 	= "Fire Resistance",
@@ -173,5 +174,8 @@ BONUSSCANNER_PATTERNS_OTHER = {
 	{ pattern = "Stamina %+16 and Armor %+100", effect = { "STA", "ARMOR"}, value = {16, 100} },
 	{ pattern = "Attack Power %+26 and %+1%% Critical Strike", effect = { "ATTACKPOWER", "CRIT"}, value = {26, 1} },
 	{ pattern = "Spell Damage %+15 and %+1%% Spell Critical Strike", effect = { "DMG", "HEAL", "SPELLCRIT"}, value = {15, 15, 1} },
-
 };
+
+BONUSSCANNER_PATTERNS_NORMAL = {
+	{ pattern = "%((%d+.%d+) damage per second%)", effect = "DPS" }
+}

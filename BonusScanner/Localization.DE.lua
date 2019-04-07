@@ -8,6 +8,7 @@ BONUSSCANNER_NAMES = {
 	INT 		= "Intelligenz",
 	SPI 		= "Willenskraft",
 	ARMOR 		= "Verstärkte Rüstung",
+	DPS 		= "Schaden pro Sekunde",
 
 	ARCANERES 	= "Arkanwiderstand",	
 	FIRERES 	= "Feuerwiderstand",
@@ -170,5 +171,10 @@ BONUSSCANNER_PATTERNS_OTHER = {
 	{ pattern = "Angriffskraft %+26 und %+1%% kritische Treffer", effect = { "ATTACKPOWER", "CRIT"}, value = {26, 1} },
 	{ pattern = "Zauberschaden %+15 und %+1%% kritische Zaubertreffer", effect = { "DMG", "HEAL", "SPELLCRIT"}, value = {15, 15, 1} },
 };
+
+BONUSSCANNER_PATTERNS_NORMAL = {
+	-- TODO: get proper line from DE client
+	--{ pattern = "%((%d+.%d+) damage per second%)", effect = "DPS" }
+}
 
 end

@@ -11,6 +11,7 @@ BONUSSCANNER_NAMES = {
 	INT 		= "Intelligence",
 	SPI 		= "Esprit",
 	ARMOR 		= "Bonus d'Armure",
+	DPS 		= "Dommage par seconde",
 
 	ARCANERES 	= "Arcane",
 	FIRERES 	= "Feu",
@@ -151,5 +152,10 @@ BONUSSCANNER_PATTERNS_GENERIC_STAGE2 = {
 
 BONUSSCANNER_PATTERNS_OTHER = {
 };
+
+BONUSSCANNER_PATTERNS_NORMAL = {
+	-- TODO: get proper line from FR client
+	--{ pattern = "%((%d+.%d+) damage per second%)", effect = "DPS" }
+}
 
 end 

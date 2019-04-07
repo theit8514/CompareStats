@@ -41,6 +41,7 @@ BonusScanner = {
 		"INT", 			-- intellect
 		"SPI", 			-- spirit
 		"ARMOR", 		-- reinforced armor (not base armor)
+		"DPS",      -- damage per second
   
 		"ARCANERES",	-- arcane resistance
 		"FIRERES",  	-- fire resistance
@@ -333,7 +334,10 @@ function BonusScanner:ScanLine(line)
 		if(tmpStr) then
 			BonusScanner.temp.set = tmpStr;
 		else
-			found = BonusScanner:CheckGeneric(line);
+			found = BonusScanner:CheckNormal(line);
+			if(not found) then
+				found = BonusScanner:CheckGeneric(line);
+			end
 			if(not found) then
 				BonusScanner:CheckOther(line);
 			end;
@@ -359,6 +363,23 @@ function BonusScanner:CheckPassive(line)
 		BonusScanner:Debug("\"" .. line .. "\"");
 		BonusScanner:CheckGeneric(line);
 	end
+end
+
+-- Scans normal bonuses like (3.1 damage per second)
+function BonusScanner:CheckNormal(line)
+	local i, p, value, found;
+
+	found = nil;
+	for i,p in BONUSSCANNER_PATTERNS_NORMAL do
+		_, _, value = string.find(line, "^" .. p.pattern);
+		if(value) then
+			BonusScanner:AddValue(p.effect, value)
+			found = 1;
+			break; -- prevent duplicated patterns to cause bonuses to be counted several times
+		end
+	end
+
+	return found;
 end
 
 
